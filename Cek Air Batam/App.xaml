@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="Cek_Air_Batam.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="AppBackgroundColor">#EDEDEE</Color>
+
+            <Color x:Key="GREEN10">#E1F7E8</Color>
+            <Color x:Key="GREEN40">#51C273</Color>
+            <Color x:Key="GREEN50">#31B057</Color>
+            <Color x:Key="GREEN60">#1C9440</Color>
+            <Color x:Key="GREEN80">#0F752E</Color>
+
+            <Color x:Key="ORANGE10">#FFD7D9</Color>
+            <Color x:Key="ORANGE40">#FF9A5C</Color>
+            <Color x:Key="ORANGE50">#FC8338</Color>
+            <Color x:Key="ORANGE60">#E6732C</Color>
+            <Color x:Key="ORANGE80">#B85518</Color>
+
+            <Color x:Key="BLUE10">#DBEBFF</Color>
+            <Color x:Key="BLUE40">#5BA0F5</Color>
+            <Color x:Key="BLUE50">#388BF2</Color>
+            <Color x:Key="BLUE60">#216BC4</Color>
+            <Color x:Key="BLUE80">#11D496</Color>
+
+            <Color x:Key="RED10">#FCE3E4</Color>
+            <Color x:Key="RED40">#ED646A</Color>
+            <Color x:Key="RED50">#E52A34</Color>
+            <Color x:Key="RED60">#CF212A</Color>
+            <Color x:Key="RED80">#A1131A</Color>
+
+            <Color x:Key="YELL10">#FFF0D1</Color>
+            <Color x:Key="YELL40">#FCC047</Color>
+            <Color x:Key="YELL50">#FBAF18</Color>
+            <Color x:Key="YELL60">#E39E14</Color>
+            <Color x:Key="YELL80">#C98C10</Color>
+
+            <Color x:Key="BLACK100">#25282B</Color>
+            <Color x:Key="BLACK80">#52575C</Color>
+            <Color x:Key="BLACK60">#A0A4A8</Color>
+            <Color x:Key="BLACK40">#CACCCF</Color>
+            <Color x:Key="BLACK10">#E8E8E8</Color>
+            <Color x:Key="BLACK05">#FAFAFA</Color>
+
+            <Style x:Key="Menu_BlackLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="Browse_BlackLabel" TargetType="Label">
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="WhiteLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="HomeCard_TitleWhiteLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="HomeCard_SubtitleWhiteLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+            <Style x:Key="HomeCard_DetailsWhiteLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="11" />
+            </Style>
+
+
+            <Style x:Key="FrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#A0A4A8" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="Padding" Value="0,0,0,0" />
+                <Setter Property="Margin" Value="10,0,0,0" />
+            </Style>
+
+
+            <Style x:Key="Default" TargetType="Label">
+                <Setter Property="FontSize" Value="Default" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+
+
+            <Style x:Key="Default2" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="Margin" Value="5, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="Default3" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="DefaultCard" TargetType="Label">
+                <Setter Property="FontSize" Value="Default" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BLUE60}" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="Subtitle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Subtitle" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="Small" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="Micro" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BLACK100}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="Margin" Value="5, 5, 0, 0" />
+            </Style>
+
+            <Style x:Key="CategoryStyle" TargetType="Image">
+                <Setter Property="Opacity" Value="0.75" />
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="Margin" Value="0, 0, 100, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemAction1BorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource BLUE50}" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="Margin" Value="0, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemActionConfirmBorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource GREEN50}" />
+                <Setter Property="CornerRadius" Value="0, 10, 0, 10" />
+                <Setter Property="Margin" Value="0, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemActionCancelBorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource RED50}" />
+                <Setter Property="CornerRadius" Value="0, 10, 0, 10" />
+                <Setter Property="Margin" Value="0, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemActionRePrintBorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource YELL80}" />
+                <Setter Property="CornerRadius" Value="10, 0, 10, 0" />
+                <Setter Property="Margin" Value="0, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemAction2BorderStyle" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource RED50}" />
+                <Setter Property="CornerRadius" Value="0, 0, 0, 0" />
+                <Setter Property="Margin" Value="0, 0, 0, 0" />
+            </Style>
+
+            <Style x:Key="SwipeItemIconStyle" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFit" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="15" />
+            </Style>
+
+            <Style x:Key="SwipeItemTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource BLACK05}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="0, 36, 0, 0" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

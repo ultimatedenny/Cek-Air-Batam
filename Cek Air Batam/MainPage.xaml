@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Cek_Air_Batam.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MarcTron.Plugin.Controls;assembly=Plugin.MtAdmob"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    BackgroundColor="{StaticResource AppBackgroundColor}">
+    <StackLayout
+        BackgroundColor="{StaticResource AppBackgroundColor}"
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand">
+        <StackLayout
+            HeightRequest="550"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Frame
+                Margin="0"
+                Padding="15"
+                BackgroundColor="#f2f2f2"
+                CornerRadius="0"
+                HasShadow="True">
+                <StackLayout>
+                    <Label
+                        Margin="0,10,0,10"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="CEK AIR BATAM"
+                        TextColor="SlateGray"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center" />
+
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Default"
+                        Text="NOMOR SAMBUNGAN:"
+                        TextColor="Black" />
+
+                    <yummy:PancakeView
+                        x:Name="NoSambView"
+                        BackgroundColor="#c7c7c7"
+                        CornerRadius="5"
+                        HeightRequest="45">
+                        <Entry
+                            x:Name="NoSamb"
+                            Margin="10,0,10,0"
+                            ClearButtonVisibility="WhileEditing"
+                            FontSize="Default"
+                            Keyboard="Numeric"
+                            Placeholder="eg: 123456"
+                            PlaceholderColor="#212121"
+                            TextColor="Black" />
+                    </yummy:PancakeView>
+
+                    <Button
+                        x:Name="getbtn"
+                        Margin="0,10,0,0"
+                        BackgroundColor="#005b9f"
+                        Clicked="getbtn_click"
+                        CornerRadius="5"
+                        FontAttributes="Bold"
+                        Text="Cek Tagihan"
+                        TextColor="White" />
+
+                    <!--<controls:MTAdView
+                        x:Name="BannerAds"
+                        IsVisible="True"
+                        VerticalOptions="EndAndExpand">
+                        <controls:MTAdView.HeightRequest>
+                            <x:OnIdiom>
+                                <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                                <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                                <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                            </x:OnIdiom>
+                        </controls:MTAdView.HeightRequest>
+                    </controls:MTAdView>-->
+
+                    <controls:MTAdView
+                        x:Name="BannerAds"
+                        Margin="5"
+                        AdsId="ca-app-pub-5151102131443886/4264800998"
+                        BackgroundColor="White"
+                        IsVisible="true"
+                        VerticalOptions="CenterAndExpand"
+                        AdsClicked="MyAds_AdsClicked"
+                        AdsClosed="MyAds_AdVClosed"
+                        AdsFailedToLoad="MyAds_AdFailedToLoad"
+                        AdsImpression="MyAds_AdVImpression"
+                        AdsLoaded="MyAds_AdLoaded"
+                        AdsOpened="MyAds_AdVOpened">
+                        <controls:MTAdView.HeightRequest>
+                            <x:OnIdiom>
+                                <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                                <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                                <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                            </x:OnIdiom>
+                        </controls:MTAdView.HeightRequest>
+                    </controls:MTAdView>
+                    
+                </StackLayout>
+            </Frame>
+            <Frame
+                Margin="0"
+                Padding="15"
+                BackgroundColor="#f2f2f2"
+                CornerRadius="0"
+                HasShadow="True"
+                HeightRequest="350">
+                <StackLayout>
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout>
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="NO PELANGGAN "
+                                    TextColor="Black" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="NAMA "
+                                    TextColor="Black" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="ALAMAT "
+                                    TextColor="Black" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="STATUS "
+                                    TextColor="Black" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="TIPE "
+                                    TextColor="Black" />
+                                <Label
+                                    FontAttributes="Bold"
+                                    Text="TOTAL TAGIHAN "
+                                    TextColor="Black" />
+                            </StackLayout>
+                            <StackLayout>
+                                <Label
+                                    x:Name="NOPEL"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="NAMA"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="ALAMAT"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="STATUS"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="GOLONGAN"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                                <Label
+                                    x:Name="TOTALTAGIHAN"
+                                    FontAttributes="Bold"
+                                    Text=": n/a"
+                                    TextColor="Black" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+            <Frame
+                Margin="0"
+                Padding="0,20,0,5"
+                BackgroundColor="#F2F2F2"
+                CornerRadius="0"
+                HasShadow="True">
+                <RefreshView
+                    x:Name="RefreshReceive"
+                    Margin="0"
+                    BackgroundColor="#F2F2F2"
+                    Refreshing="RefReceive">
+                    <StackLayout>
+                        <Button
+                            x:Name="CekDetailButton"
+                            Margin="15"
+                            BackgroundColor="#005b9f"
+                            Clicked="CekDetailClicked"
+                            CornerRadius="5"
+                            FontAttributes="Bold"
+                            Text="LIHAT DETAIL"
+                            TextColor="#f2f2f2" />
+
+                        <CollectionView
+                            x:Name="CollectionViewTagihan"
+                            Margin="0,0,0,0"
+                            BackgroundColor="#F2F2F2">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout
+                                    x:Name="GridReceive"
+                                    Orientation="Vertical"
+                                    Span="1" />
+                            </CollectionView.ItemsLayout>
+
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+
+                                    <pv:PancakeView
+                                        Margin="0"
+                                        CornerRadius="0"
+                                        IsClippedToBounds="True"
+                                        VerticalOptions="Start">
+
+                                        <SwipeView
+                                            Margin="5"
+                                            BackgroundColor="#A0A4A8"
+                                            HeightRequest="60">
+
+                                            <SwipeView.RightItems>
+                                                <SwipeItems Mode="Reveal">
+                                                    <SwipeItemView CommandParameter="{Binding periode}" Invoked="CekDetailBulan">
+                                                        <Grid BackgroundColor="Transparent" WidthRequest="70">
+                                                            <BoxView Style="{StaticResource SwipeItemAction1BorderStyle}" />
+                                                            <Image Source="round_visibility_white_48.png" Style="{StaticResource SwipeItemIconStyle}" />
+                                                        </Grid>
+                                                    </SwipeItemView>
+                                                </SwipeItems>
+                                            </SwipeView.RightItems>
+
+                                            <SwipeView.Content>
+                                                <Grid>
+                                                    <BoxView
+                                                        BackgroundColor="{Binding ColorStatus}"
+                                                        HorizontalOptions="Start"
+                                                        VerticalOptions="FillAndExpand"
+                                                        WidthRequest="30" />
+
+                                                    <Frame Style="{StaticResource FrameStyle}">
+                                                        <Grid
+                                                            Margin="0,0,10,0"
+                                                            RowSpacing="0"
+                                                            VerticalOptions="FillAndExpand">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="auto" />
+                                                                <ColumnDefinition Width="0.9*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <!--<controls:Initial Name="{Binding VendorAbb}"  Grid.Column="0" />-->
+                                                            <Grid
+                                                                Grid.Column="1"
+                                                                RowSpacing="0"
+                                                                VerticalOptions="Center">
+
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="*" />
+                                                                    <RowDefinition Height="*" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <!--<controls:InitialsView Name="{Binding UseNam}" />-->
+                                                                <Label
+                                                                    Grid.Row="0"
+                                                                    Grid.Column="0"
+                                                                    Style="{StaticResource Small}"
+                                                                    Text="{Binding flaglunas}"
+                                                                    VerticalTextAlignment="Center" />
+                                                                <Label
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="0"
+                                                                    Style="{StaticResource Small}"
+                                                                    Text="{Binding periode}"
+                                                                    VerticalTextAlignment="Center" />
+                                                                <Label
+                                                                    Grid.Row="0"
+                                                                    Grid.Column="1"
+                                                                    HorizontalOptions="End"
+                                                                    HorizontalTextAlignment="End"
+                                                                    Style="{StaticResource Small}"
+                                                                    Text="{Binding kasir, StringFormat='KASIR: {0:D}'}"
+                                                                    VerticalTextAlignment="Center" />
+                                                                <Label
+                                                                    Grid.Row="1"
+                                                                    Grid.Column="1"
+                                                                    HorizontalOptions="End"
+                                                                    HorizontalTextAlignment="End"
+                                                                    Style="{StaticResource Small}"
+                                                                    Text="{Binding total, StringFormat='TOTAL: Rp. {0:D}'}"
+                                                                    VerticalTextAlignment="Center" />
+                                                            </Grid>
+                                                        </Grid>
+                                                    </Frame>
+                                                </Grid>
+                                            </SwipeView.Content>
+                                        </SwipeView>
+                                    </pv:PancakeView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+                    </StackLayout>
+                </RefreshView>
+            </Frame>
+        </StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<StackLayout Margin="5,10,5,10" BackgroundColor="White">
+        -->
+        <!--
+                <controls:MTAdView
+                    x:Name="myAds1"
+                    Margin="5"
+                    AdsId="ca-app-pub-3940256099942544/6300978111"
+                    BackgroundColor="White"
+                    IsVisible="true"
+                    PersonalizedAds="true"
+                    VerticalOptions="CenterAndExpand">
+                    <controls:MTAdView.HeightRequest>
+                        <x:OnIdiom>
+                            <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                            <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                            <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                        </x:OnIdiom>
+                    </controls:MTAdView.HeightRequest>
+                </controls:MTAdView>
+                <controls:MTAdView
+                    x:Name="myAds2"
+                    Margin="5"
+                    AdsId="ca-app-pub-3940256099942544/6300978111"
+                    BackgroundColor="White"
+                    IsVisible="true"
+                    PersonalizedAds="true"
+                    VerticalOptions="CenterAndExpand">
+                    <controls:MTAdView.HeightRequest>
+                        <x:OnIdiom>
+                            <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                            <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                            <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                        </x:OnIdiom>
+                    </controls:MTAdView.HeightRequest>
+                </controls:MTAdView>
+                <controls:MTAdView
+                    x:Name="myAds3"
+                    Margin="5"
+                    AdsId="ca-app-pub-3940256099942544/6300978111"
+                    BackgroundColor="White"
+                    IsVisible="true"
+                    PersonalizedAds="true"
+                    VerticalOptions="CenterAndExpand">
+                    <controls:MTAdView.HeightRequest>
+                        <x:OnIdiom>
+                            <x:OnIdiom.Phone>50</x:OnIdiom.Phone>
+                            <x:OnIdiom.Tablet>90</x:OnIdiom.Tablet>
+                            <x:OnIdiom.Desktop>90</x:OnIdiom.Desktop>
+                        </x:OnIdiom>
+                    </controls:MTAdView.HeightRequest>
+                </controls:MTAdView>-->
+        <!--
+        </StackLayout>-->
+
+    </StackLayout>
+
+
+</ContentPage>
